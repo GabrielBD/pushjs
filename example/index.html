@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Push Notifications example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+<body>
+    <main>
+        <h1>Push Notification example</h1>
+        <p>Only https or localhost pages may access Push API.</p>
+        <p>
+            <button id="subscribe">Subscribe</button>
+        </p>
+</main>
+
+    <script src="../bin/push.min.js"></script>
+
+    <script type="text/javascript">
+    Push.create('titulo', {
+    body: 'hola',
+    timeout: 4000,
+    onClose: function () {
+        window.focus();
+        this.close();
+        console.log('close');
+      }
+    });
+    </script>
+</body>
